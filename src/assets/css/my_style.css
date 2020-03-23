@@ -1,0 +1,64 @@
+.tt-cap{
+    text-transform: capitalize;
+}
+.mrg-r-5 {
+    margin-right: 5px;
+}
+
+.mrg-r-10 {
+    margin-right: 10px;
+}
+.mrg-b-10 {
+    margin-bottom: 10px;
+}
+.mrg-t-0{
+    margin-top: 0;
+}
+.icon-example{
+    font-size: 20px;
+    float: right;
+    margin-right: 10px;
+}
+.d-flex {
+    /* display: flex; */
+    width: 100%;
+    padding-bottom: 6px;
+    justify-content: flex-end;
+}
+
+.btn {
+    line-height: 0;
+}
+
+.modal {
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-enter-active,
+.modal-leave-active {
+    transition: opacity .9s
+}
+
+.modal-enter,
+.modal-leave-to {
+    opacity: 0
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.tableFilters {
+    display: flex;
+    margin: 4px 0;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+.tableFilters .control{
+    width: 5%;
+}
+.top-menu {
+    width: auto;
+}
