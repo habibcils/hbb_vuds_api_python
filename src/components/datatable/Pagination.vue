@@ -57,12 +57,6 @@
 </script>
 
 <style scoped>
-.pagination a{
-    background-color: #d4cdcd;
-    padding: 3px 8px;
-    margin: 0 5px;
-    cursor:pointer;
-}
 .pagination span{
     padding: 3px 8px;
     margin: 0 5px;

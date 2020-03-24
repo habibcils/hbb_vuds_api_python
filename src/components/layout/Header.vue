@@ -7,19 +7,19 @@
             <div class="d-flex justify-content-between">
                 <div class="top-menu d-flex align-items-center">
                     <button type="button" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></button>
-                    <div class="header-search">
+                    <div  class="header-search" :class="{'open' : dropSearch}">
                         <div class="input-group">
-                            <span class="input-group-addon search-close"><i class="ik ik-x"></i></span>
-                            <input type="text" class="form-control">
-                            <span class="input-group-addon search-btn"><i class="ik ik-search"></i></span>
+                            <span @click="hideSearch" class="input-group-addon search-close"><i class="ik ik-x"></i></span>
+                            <input type="text" class="form-control" placeholder="Search documents">
+                            <span @click="showSearch" class="input-group-addon search-btn"><i class="ik ik-search"></i></span>
                         </div>
                     </div>
                     <button type="button" id="navbar-fullscreen" class="nav-link"><i class="ik ik-maximize"></i></button>
                 </div>
                 <div class="top-menu d-flex align-items-center">
-                    <div class="dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="notiDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ik ik-bell"></i><span class="badge bg-danger">3</span></a>
-                        <div class="dropdown-menu dropdown-menu-right notification-dropdown" aria-labelledby="notiDropdown">
+                    <div class="dropdown" >
+                        <a class="nav-link dropdown-toggle" @click="showNotif" ref="showNotif" id="notiDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ik ik-bell"></i><span class="badge bg-danger">3</span></a>
+                        <div class="dropdown-menu-notif dropdown-menu dropdown-menu-right notification-dropdown" :class="{'show': dropNotif}" aria-labelledby="notiDropdown">
                             <h4 class="header">Notifications</h4>
                             <div class="notifications-wrap">
                                 <a v-ripple href="#" class="media">
@@ -73,13 +73,10 @@
                     </div>
                     <button type="button" class="nav-link ml-10" id="apps_modal_btn" data-toggle="modal" data-target="#appsModal"><i class="ik ik-grid"></i></button>
                     <div class="dropdown" :class="{'show': dropProfile}">
-                        <a class="dropdown-toggle" @click="showDropOut" ref="myBtn" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="avatar" src="http://60nam.dhhp.edu.vn/wp-content/uploads/2019/10/user-1-60.png" alt=""></a>
+                        <a class="dropdown-toggle" @click="showDropOut" ref="myBtn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="avatar" :src="profile" alt=""></a>
                         <div class="dropdown-menu dropdown-menu-right" :class="{'show': dropProfile}" aria-labelledby="userDropdown">
                             <router-link :to="{path:'/profile'}" v-slot="{ href, route, navigate }" >
-                                <!-- <div v-ripple class="nav-item"  :class="[isActive && 'is-active', isExactActive && 'active']" > -->
-                                    <!-- <a class="dropdown-item" href="/profile"><i class="ik ik-user dropdown-icon"></i> Profile</a> -->
-                                    <a :href="href" @click="navigate" class="dropdown-item"><i class="ik ik-user  dropdown-icon"></i><span>Profile </span></a>
-                                <!-- </div> -->
+                                <a :href="href" @click="navigate" class="dropdown-item"><i class="ik ik-user  dropdown-icon"></i><span>Profile </span></a>
                             </router-link>
                             <a class="dropdown-item" href="#"><i class="ik ik-settings dropdown-icon"></i> Settings</a>
                             <a class="dropdown-item" href="#"><span class="float-right"><span class="badge badge-primary">6</span></span><i class="ik ik-mail dropdown-icon"></i> Inbox</a>
@@ -95,12 +92,16 @@
 </template>
 
 <script>
+const profile = require('@/assets/svg-loaders/profile.svg')
 export default {
-
     data() {
         return{
             dropProfile : false,
+            dropMessage : false,
+            dropNotif : false,
+            dropSearch : false,
             sLogout : false,
+            profile: profile
         }
     },
     methods: {
@@ -133,11 +134,26 @@ export default {
         showDropOut(e){
             this.dropProfile = (this.dropProfile) ? false : true;
         },
+        showSearch(e){
+            this.dropSearch = true;
+        },     
+        hideSearch(){
+            this.dropSearch = false;
+        },
+        showNotif(e){
+                console.log('tiff')
+
+            this.dropNotif = (this.dropNotif) ? false : true;
+        },
         close(e){
             if (!this.$refs.myBtn.contains(e.target)){
                 // console.log(e.target)
                 this.dropProfile = false
+                // this.dropNotif = false
             }
+            if (!this.$refs.showNotif.contains(e.target)){
+                this.dropNotif = false
+            }            
         }
   },
   created() {

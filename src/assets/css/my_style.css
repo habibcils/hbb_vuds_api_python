@@ -62,3 +62,36 @@
 .top-menu {
     width: auto;
 }
+.wrapper .header-top .top-menu .header-search.open .input-group .form-control{
+    width: 200px;
+    transition: all ease .5s;
+}
+.wrapper .header-top .top-menu .header-search, .input-group, .form-control, .input-group-addon{
+    transition: all ease .5s;
+}
+.dropdown-menu-notif.show{
+    position: absolute !important;
+    transform: translate3d(-270px, -10px, 0px) !important;
+    top: 0px !important;
+    left: 0px !important;
+    will-change: transform !important;        
+}
+.text-blues{
+    color: #3d6eb2;
+}
+.breadcrumb-item.active {
+    color: #7c98bf;
+}
+.pagination a{
+    background-color: #dce2e8;
+    padding: 3px 8px;
+    margin: 0 5px;
+    cursor: pointer;    
+}
+::placeholder{
+    color:#3d6eb2
+
+}
+.file-uploads {
+    line-height: .9rem;
+}

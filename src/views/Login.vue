@@ -7,7 +7,7 @@
             </div>
             <div class="login-content">
                 <form @submit.prevent @submit="login">
-                    <img :src="avatar">
+                    <img :src="logo">
                     <h2 class="title">Welcome</h2>
                     <div class="input-div one">
                         <div class="i">
@@ -33,7 +33,7 @@
                     </button>                    
                     <button v-else class="btn" type="submit">
                         Login
-                    </button>
+                    </button>           
                 </form>
             </div>
         </div>
@@ -42,9 +42,9 @@
 
 <script>
 const avatar = require('@/assets/img/avatar.svg')
-const wave = require('@/assets/img/wave.png')
-const bg = require('@/assets/img/bg.svg')
+const bg = require('@/assets/svg-loaders/insert_block.svg')
 const oval = require('@/assets/svg-loaders/oval.svg')
+const logo = require('@/assets/img/logo.png')
 import { createNamespacedHelpers, mapState, mapGetters } from 'vuex'
 
     export default {
@@ -52,9 +52,9 @@ import { createNamespacedHelpers, mapState, mapGetters } from 'vuex'
         data() {
             return {
                 avatar : avatar,
-                wave : wave,
                 bg : bg,
                 oval : oval,
+                logo : logo,
                 username: '',
                 password: '',
                 process: false
@@ -94,10 +94,12 @@ import { createNamespacedHelpers, mapState, mapGetters } from 'vuex'
                             console.log(res)
                             if(res == false){
                                 this.$toasted.error('Failed, check your username/password').goAway(3000)
-                            }else{
+                            }else if(res == true){
                                 setTimeout(()=>{
                                     this.$toasted.success('Welcome').goAway(3000)
                                 },800)
+                            }else{
+                                this.$toasted.error('Failed, somehting wrong').goAway(3000)
                             }
                             this.process = false
                         })
@@ -119,8 +121,8 @@ button.btn-loading{
     font-weight: 500;
 }
 *{
-	padding: 0;
-	margin: 0;
+	/* padding: 0; */
+	/* margin: 0; */
 	box-sizing: border-box;
 }
 
@@ -168,12 +170,12 @@ form{
 }
 
 .login-content img{
-    height: 100px;
+    height: 200px;
 }
 
 .login-content h2{
 	margin: 15px 0;
-	color: #333;
+	color: #1b4682;
 	text-transform: uppercase;
     font-size: 2.3rem;
     font-weight: 900;
@@ -225,7 +227,7 @@ form{
 	width: 0%;
 	height: 2px;
 	/* background-color: #38d39f; */
-	background-color: #1ebaf0;
+	background-color: #1b4682;
 	transition: .4s;
 }
 
@@ -290,7 +292,7 @@ a:hover{
 	outline: none;
 	border: none;
 	/* background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f); */
-    background-image: linear-gradient(to right, #19b5fe, #1ebaf0, #52c4ef);
+    background-image: linear-gradient(to right, #1b4682, #1f4981, #1b4682);
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;

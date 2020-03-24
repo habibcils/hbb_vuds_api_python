@@ -35,12 +35,12 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-2">
-                                <img src="http://60nam.dhhp.edu.vn/wp-content/uploads/2019/10/user-1-60.png" alt="" width="100%">
+                                <img :src="profile" alt="" width="100%">
                             </div>
                             <div class="col-sm-6">
                                 <div class="row">
                                     <label for="" class="form-group col-md-2">Username</label>
-                                    <label for="" class="form-group col-md-3">: {{ email }}</label>
+                                    <label for="" class="form-group col-md-3">: {{ username }}</label>
                                 </div>
                                 <div class="row">
                                     <label for="" class="form-group col-md-2">Fullname</label>
@@ -65,6 +65,8 @@
 </template>
 
 <script>
+const profile = require('@/assets/svg-loaders/profile.svg')
+
 import { createNamespacedHelpers, mapState, mapGetters } from 'vuex'
 
 export default {
@@ -87,7 +89,7 @@ export default {
 	// name: "Index",
 	data() {
 		return {
-			msg: "Welcome to Your Vue.js App"
+            profile: profile
 		};
 	}
 };

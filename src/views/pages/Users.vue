@@ -301,7 +301,7 @@ export default {
 
 
             this.tableData.draw++;
-            apiBase.get(this.prefixApi+'?search='+this.tableData.search+'&order_by='+this.sortKey+'&order_type='+sort+'&limit='+this.tableData.length+'&offset='+this.tableData.offset, {headers: headers})
+            apiBase.get(this.prefixApi+'?is_active=true&search='+this.tableData.search+'&order_by='+this.sortKey+'&order_type='+sort+'&limit='+this.tableData.length+'&offset='+this.tableData.offset, {headers: headers})
                 .then(response => {
                     console.log(response)
                     if(this.tableData.length < 0 ){

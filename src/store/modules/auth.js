@@ -57,35 +57,14 @@ export default {
                     ]
                     let payload = encrypted(data)
                     localStorage.setItem('permission', payload)
-
-                    // getPermission(res.data.data.id_usergroup).then( (res) => {
-                    //     // this.$router.push({name: 'home', query : data });
-                    //     return true
-                    // })
-                    // apiBase
-                    // .get('usergroup/permission?id='+res.data.data[0].id_usergroup)
-                    // .then(res => {
-                    //     // console.log(res)                        
-                    //     let data = res.data.data
-
-                    //     // console.log(payload)
-                    //     // let dek = decrypted(payload)
-                    //     // console.log(dek)
-                    //     return true
-                    // }).catch(err => {
-                    //     if(err.response){                   
-                    //         return false
-                    //     }else{
-                    //         return true
-                    //     }
-                    // })                    
+              
                     return true
                 }).catch(err => {
                     console.log(err)
                     if(err.response){                   
                         return false
                     }else{
-                        return true
+                        return false
                     }
                 })
         },
@@ -121,15 +100,6 @@ export default {
                         return true
                     }
                 })
-
-
-                    // localStorage.setItem('auth', 1)
-                    // localStorage.setItem('permission', true)
-                    // commit('LOGGED', res.data.data[0])
-                    // commit('LOGGED', data.data.token)
-                    // localStorage.setItem('token',data.data.token)
-                    return true
-                // })
             }
 
         },
@@ -146,7 +116,7 @@ export default {
             state.token = payload.token
             state.username = payload.username
             state.fullname = payload.fullname
-            state.email = payload.fullname
+            state.email = payload.email
             state.groups = payload.groups[0]
             // state.id_usergroup = payload.id_usergroup
             state.statusLog = 1

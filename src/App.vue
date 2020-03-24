@@ -29,20 +29,6 @@ export default {
         Index
     },
     mounted() {
-        // let tokenStr = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODQ3ODAyMDMsIm5iZiI6MTU4NDc4MDIwMywianRpIjoiMjMxZGQ4YjEtN2I5MS00MTEyLTg3NDUtM2Y5YzMzYWIwMjhhIiwiZXhwIjoxNTg0OTUzMDAzLCJpZGVudGl0eSI6ImFkbWluIiwiZnJlc2giOnRydWUsInR5cGUiOiJhY2Nlc3MiLCJ1c2VyX2NsYWltcyI6eyJ1c2VyX2lkIjoxfX0.X29aq-2z6BYuEgI0bE40TTlSB63ScuXqi9rxQBgB-yc'
-            // apiBase
-            //     .get('user?username=admin&is_exact=false&limit=10&offset=0', { headers : {"Authorization" : `Bearer ${tokenStr}`}})
-            //     .then(res => {
-            //         console.log('success GET')
-            //         console.log(res.data)                           
-            //         // return true
-            //     }).catch(err => {
-            //         console.log(err)
-            //         if(err.response){                   
-            //         }else{
-            //             // return true
-            //         }
-            //     })
 
         this.$store.dispatch('auth/checkLogin').then((res)=>{
             if(res == 'success'){

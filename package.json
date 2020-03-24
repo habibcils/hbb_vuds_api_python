@@ -19,6 +19,7 @@
     "vue-ripple-directive": "^2.0.1",
     "vue-router": "^3.1.5",
     "vue-toasted": "^1.1.27",
+    "vue-upload-component": "^2.8.20",
     "vue-waves": "^0.1.1",
     "vue-waves-button": "^1.0.4",
     "vue2-google-maps": "^0.10.7",

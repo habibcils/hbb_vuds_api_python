@@ -1,19 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Users from '@/views/pages/Users.vue'
+// import Users from '@/views/pages/Users.vue'
 import {decrypted} from "@/helpers"
 
 const Null404 = r => require.ensure([], () => r(require('@/components/_code//404.vue')), 'big-pages')
 const Null503 = r => require.ensure([], () => r(require('@/components/_code//503.vue')), 'big-pages')
 const Login = r => require.ensure([], () => r(require('../views/Login.vue')), 'big-pages')
-const Gis = r => require.ensure([], () => r(require('../views/pages/Gis.vue')), 'big-pages')
 const Home = r => require.ensure([], () => r(require('../views/pages/Home.vue')), 'big-pages')
-const Usergroup = r => require.ensure([], () => r(require('../views/pages/Usergroup.vue')), 'big-pages')
-const Shield = r => require.ensure([], () => r(require('../views/pages/Shield.vue')), 'big-pages')
-const Useraccess = r => require.ensure([], () => r(require('../views/pages/Useraccess.vue')), 'big-pages')
-const Menusort = r => require.ensure([], () => r(require('../views/pages/Menu_sort.vue')), 'big-pages')
-const Menu = r => require.ensure([], () => r(require('../views/pages/Menu.vue')), 'big-pages')
+const Users = r => require.ensure([], () => r(require('../views/pages/Users.vue')), 'big-pages')
 const Profile = r => require.ensure([], () => r(require('../views/pages/Profile.vue')), 'big-pages')
+const DocumentIn = r => require.ensure([], () => r(require('../views/pages/Document_in.vue')), 'big-pages')
+const DocumentAdd = r => require.ensure([], () => r(require('../views/pages/Document_add.vue')), 'big-pages')
 Vue.use(VueRouter)
 
 const routes = [
@@ -36,9 +33,9 @@ const routes = [
         },
     },    
     {
-        path: '/gis',
-        name: 'Gis',
-        component: Gis,
+        path: '/document_In',
+        name: 'DocumentIn',
+        component: DocumentIn,
         meta: {
             auth: true,
             permission: 'gis',
@@ -55,9 +52,9 @@ const routes = [
         component: Null503,
     },
     {
-        path: '/addLoc',
-        name: 'AddLoc',
-        component: Null404,
+        path: '/document_add',
+        name: 'DocumentAdd',
+        component: DocumentAdd,
         meta: {
             auth: true,
             permission: 'addloc',
@@ -72,42 +69,7 @@ const routes = [
             permission: 'users',
         },
     },
-    {
-        path: '/usergroup',
-        name: 'Usergroup',
-        component: Usergroup,
-        meta: {
-            auth: true,
-            permission: 'usergroup',
-        },        
-    },
-    {
-        path: '/useraccess',
-        name: 'Useraccess',
-        component: Useraccess,
-        meta: {
-            auth: true,
-            permission: 'useraccess',
-        },        
-    },
-    {
-        path: '/menu',
-        name: 'Menu',
-        component: Menu,
-        meta: {
-            auth: true,
-            permission: 'menu',
-        },        
-    },
-    {
-        path: '/menu_order',
-        name: 'Menu Order',
-        component: Menusort,
-        meta: {
-            auth: true,
-            permission: 'menu_order',
-        },
-    },
+
     { path: "*", component: Null404 }    
 
 ]
@@ -152,15 +114,6 @@ router.beforeEach((to, from, next) => {
         next();
     }
 });
-
-function addroute() {
-    router.addRoutes(
-        [
-            { path: '/shield', name: 'Shield', component: Shield }
-        ]
-    )
-}
-addroute()
 
 
 export default router

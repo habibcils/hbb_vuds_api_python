@@ -6,7 +6,7 @@
 					<div class="widget-body">
 						<div class="d-flex justify-content-between align-items-center">
 							<div class="state">
-								<h6>Bookmarks</h6>
+								<h6>Document In</h6>
 								<h2>1,410</h2>
 							</div>
 							<div class="icon">
@@ -25,7 +25,7 @@
 					<div class="widget-body">
 						<div class="d-flex justify-content-between align-items-center">
 							<div class="state">
-								<h6>Likes</h6>
+								<h6>Document Out</h6>
 								<h2>41,410</h2>
 							</div>
 							<div class="icon">
@@ -44,7 +44,7 @@
 					<div class="widget-body">
 						<div class="d-flex justify-content-between align-items-center">
 							<div class="state">
-								<h6>Events</h6>
+								<h6>Document Favorite</h6>
 								<h2>410</h2>
 							</div>
 							<div class="icon">

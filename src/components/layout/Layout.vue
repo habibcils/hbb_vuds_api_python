@@ -5,16 +5,16 @@
         <div class="page-wrap">
             <div class="app-sidebar colored" @mouseover="hovering(true)" @mouseout="hovering(false)"  v-bind:class="{ 'active' : hover}">
                 <div class="sidebar-header">
-                    <a class="header-brand" href="index.html">
+                    <a class="header-brand  text-white" href="/">
                         <div class="logo-img">
-                            <span>HS</span>
+                            <span class="text-white">HS</span>
                             <!-- <img src="https://kanghabib.com/all_assets/tk_theme/src/img/brand-white.svg" class="header-brand-img" alt="lavalite">  -->
                         </div>
-                        <span class="text"> VUEX</span>
+                        <span class="text text-white"> VUEX</span>
                     </a>
-                    <button v-if="!isActive" type="button" class="nav-toggle" @click="toggleSidebar"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
-                    <button v-else type="button" class="nav-toggle" @click="toggleSidebar"><i data-toggle="expanded" class="ik ik-toggle-left toggle-icon"></i></button>
-                    <button  id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
+                    <button v-if="!isActive" type="button" class="text-white nav-toggle" @click="toggleSidebar"><i data-toggle="expanded" class="text-white ik ik-toggle-right toggle-icon"></i></button>
+                    <button v-else type="button" class="text-white nav-toggle" @click="toggleSidebar"><i data-toggle="expanded" class="text-white ik ik-toggle-left toggle-icon"></i></button>
+                    <button  id="sidebarClose" class="text-white nav-close"><i class="text-white ik ik-x"></i></button>
                 </div>
                 <Navbar/>
             </div>
@@ -73,3 +73,9 @@ export default {
 // require('@/assets/css/style.css');
 
 </script>
+
+<style scoped>
+*{
+    color:#3d6eb2
+}
+</style>

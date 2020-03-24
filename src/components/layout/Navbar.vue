@@ -17,18 +17,33 @@
                     </div>
                 </router-link> -->
 
-            <!-- </span> -->
-            <div data-v-483b6756="" class="nav-lavel">Applications </div>
+            <div data-v-483b6756="" class="nav-lavel">Home </div>
             <router-link :to="{path:'/'}" v-slot="{ href, route, navigate, isActive, isExactActive }" >
                 <div v-ripple class="nav-item"  :class="[isActive && 'is-active', isExactActive && 'active']" >
                     <a :href="href" @click="navigate"><i class="ik ik-bar-chart-2"></i><span>Dashboard </span></a>
                 </div>
             </router-link> 
-            <router-link :to="{path:'/document'}" v-slot="{ href, route, navigate, isActive, isExactActive }" >
+            <div data-v-483b6756="" class="nav-lavel">Documents </div>
+            <router-link :to="{path:'/document_in'}" v-slot="{ href, route, navigate, isActive, isExactActive }" >
                 <div v-ripple class="nav-item"  :class="[isActive && 'is-active', isExactActive && 'active']" >
-                    <a :href="href" @click="navigate"><i class="ik ik-briefcase"></i><span>Document </span></a>
+                    <a :href="href" @click="navigate"><i class="ik ik-briefcase"></i><span>Document In</span></a>
                 </div>
             </router-link>
+            <router-link :to="{path:'/document_out'}" v-slot="{ href, route, navigate, isActive, isExactActive }" >
+                <div v-ripple class="nav-item"  :class="[isActive && 'is-active', isExactActive && 'active']" >
+                    <a :href="href" @click="navigate"><i class="ik ik-briefcase"></i><span>Document Out</span></a>
+                </div>
+            </router-link>
+            <router-link :to="{path:'/document_fav'}" v-slot="{ href, route, navigate, isActive, isExactActive }" >
+                <div v-ripple class="nav-item"  :class="[isActive && 'is-active', isExactActive && 'active']" >
+                    <a :href="href" @click="navigate"><i class="ik ik-briefcase"></i><span>Document Favorite</span></a>
+                </div>
+            </router-link> 
+            <router-link :to="{path:'/document_add'}" v-slot="{ href, route, navigate, isActive, isExactActive }" >
+                <div v-ripple class="nav-item"  :class="[isActive && 'is-active', isExactActive && 'active']" >
+                    <a :href="href" @click="navigate"><i class="ik ik-plus-square"></i><span>Document Add</span></a>
+                </div>
+            </router-link>                       
             <div data-v-483b6756="" class="nav-lavel">System </div> 
             <router-link :to="{path:'/profile'}" v-slot="{ href, route, navigate, isActive, isExactActive }" >
                 <div v-ripple class="nav-item"  :class="[isActive && 'is-active', isExactActive && 'active']" >
@@ -40,13 +55,6 @@
                     <a :href="href" @click="navigate"><i class="ik ik-users"></i><span>Users </span></a>
                 </div>
             </router-link> 
-<!-- 
-            <div data-v-483b6756="" class="nav-item">
-                <a data-v-483b6756="" href="/dashboard">
-                <i data-v-483b6756="" class="ik ik-bar-chart-2"></i>
-                <span data-v-483b6756="">Dashboard </span>
-                </a>
-            </div> -->
         </nav>
     </div>
 </vueCustomScrollbar>
